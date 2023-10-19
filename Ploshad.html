@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Вычисление площади боковой поверхности пирамиды</title>
+</head>
+<body>
+  <h2>Вычисление площади боковой поверхности пирамиды</h2>
+  <form>
+    <label for="base">Длина основания:</label>
+    <input type="number" id="base" step="any" onchange="calculateSurfaceArea()" min="0" /><br><br>
+    <label for="height">Высота пирамиды:</label>
+    <input type="number" id="height" step="any" onchange="calculateSurfaceArea()" min="0"/><br><br>
+    <label for="result">Площадь боковой поверхности:</label>
+    <input type="text" id="result" disabled /><br><br>
+  </form>
+
+  <script>
+    function calculateSurfaceArea() {
+      var base = parseFloat(document.getElementById("base").value);
+      var height = parseFloat(document.getElementById("height").value);
+
+      var surfaceArea = (base * height) / 2;
+
+      document.getElementById("result").value = surfaceArea.toFixed(2);
+    }
+  </script>
+</body>
+</html>
